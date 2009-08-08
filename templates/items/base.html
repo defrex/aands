@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load cat_tags %}
+
+{% block title %}Registration{% endblock %}
+
+{% block sidebar %}
+    <div id="nav">
+        <ul>
+            {% if item or items %}
+            <li><a href="/item">All Items</a></li>
+            {% endif %}
+            <li><a href="/admin">Admin</a></li>
+            {% if not request.user.is_authenticated %}
+            <li><a href="#" id="login">Login</a></li>
+            {% else %}
+            <li><a href="{% url login_logout %}" id="logout">Logout</a></li>
+            {% endif %}
+            <li><a href="{% url items %}"><strong>All Items</strong></a></li>
+            <li><a href="{% url items_unreged %}"><strong>Unregistered Items</strong></a></li>
+            {% category_list request.GET %}
+        </ul>
+    </div>
+{% endblock %}
+

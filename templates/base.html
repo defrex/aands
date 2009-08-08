@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aron and Sarah: {% block title %}{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{{ MEDIA_URL }}/css/base.css" />
+    <link rel="stylesheet" href="{{ MEDIA_URL }}/css/jquery-ui/jquery-ui-1.7.2.custom.css" />
+    
+    <!-- IE hack for HTML5: -->
+    <!--[if IE]>
+    <script src="{{ MEDIA_URL }}/js/html5-compat.js"></script>
+    <![endif]-->
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.js"></script>
+    
+</head>
+<body>
+    <section id="wrapper">
+        <header>
+            {% block header %}
+            <ul>
+                <li><a href="{% url home %}">Home</a></li>
+                <li><a href="{% url items %}">Registration</a></li>
+            </ul>
+            {% endblock %}
+        </header>
+        <section id="main">
+            <section id="body">
+                {% block body %}&nbsp;{% endblock %}
+            </section>
+            <aside id="sidebar">
+                {% block sidebar %}&nbsp;{% endblock %}
+            </aside>
+        </section>
+        <div class="clearing"></div>
+        <footer>
+            {% block footer %}&nbsp;{% endblock %}
+        </footer>
+    </section>
+</body>
+</html>
+

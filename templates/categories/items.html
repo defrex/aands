@@ -1,0 +1,13 @@
+{% extends "items/base.html" %}
+
+{% load pagination_tags %}
+{% load item_tags %}
+
+{% block main %}
+    {% autopaginate items 10 %}
+    {% for item in items %}
+        {% show_item %}
+    {% endfor %}
+    {% paginate %}
+{% endblock %}
+

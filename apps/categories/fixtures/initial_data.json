@@ -1,0 +1,30 @@
+[
+	{
+		"pk": 1,
+		"model": "categories.category",
+		"fields": {
+			"name": "Dishes and Cutlery"
+		}
+	},
+	{
+		"pk": 2,
+		"model": "categories.category",
+		"fields": {
+			"name": "Appliances"
+		}
+	},
+	{
+		"pk": 3,
+		"model": "categories.category",
+		"fields": {
+			"name": "Cloths"
+		}
+	},
+	{
+		"pk": 4,
+		"model": "categories.category",
+		"fields": {
+			"name": "Furniture"
+		}
+	}
+]

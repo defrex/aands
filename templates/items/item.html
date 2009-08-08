@@ -1,0 +1,35 @@
+{% load markup %}
+{% load item_tags %}
+
+<div class="item">
+    <h2>
+        <a href="/item/{{ item.pk }}" class="title">{{item.name }}</a>
+        {% if request.user|has_claimed:item or not item.claimed %}
+            <span id="claim_{{ item.pk }}">
+                <a href="{% url items_claim item.pk %}"
+                    class="item_mod {% spaceless %}
+                    {% if request.user|has_claimed:item %}
+                    dis
+                    {% endif %}
+                    {% endspaceless %}claim"
+                    onclick="claim({{ item.pk }});return false;">I'm
+                    {% if request.user|has_claimed:item %}
+                    not
+                    {% endif %}
+                    getting this</a>
+            </span>
+        {% endif %}
+    </h2>
+    <div style="clear:both;"></div>
+    {% if item.picture %}
+        <img src="{{item.picture.url}}" class="item_img" />
+    {% endif %}
+    <div>
+        {% if item.link %}
+            <a href="{{ item.link }}" class="external_link">Where it can be purchased
+            <img src="{{ MEDIA_URL }}img/external.png" /></a>
+        {% endif %}
+        {{ item.description|markdown }}
+    </div>
+</div>
+

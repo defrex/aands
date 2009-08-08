@@ -1,0 +1,9 @@
+{% extends "items/base.html" %}
+
+{% load item_tags %}
+
+{% block main %}
+    <table id="new_item">
+        {{ form.as_table }}
+    </table>
+{% endblock %}
