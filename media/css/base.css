@@ -12,20 +12,22 @@ body{margin:0;padding:0;font-family:arial;background-color:#0b70c0;
                 text-decoration:none;font-size:25px;margin-right:10px;}
         header a:hover {border-bottom:2px solid #fff;}
     
-    section#main{position:absolute;top:550px;color:#eeeeec;}
+    section#main{position:absolute;top:430px;color:#111;}
         
-        section#body{float:left;width:670px;padding:15px;margin-left:120px;}
-        aside#sidebar{float:right;width:240px;padding:5px;}
+        section#body{float:left;width:670px;padding:15px;margin-left:120px;
+                background-image:url(../img/white-op25.png);border:0px dotted #333;
+                margin-bottom:50px;}
+        
+        /*aside#sidebar{float:right;width:240px;padding:5px;}*/
     
     footer{height:150px;width:100%;font-size:12px;border-top:0;padding:10px;}
 
 img{border:0;}
 
-a.button{padding:5px;
-            border:2px solid #000;-moz-border-radius:4px;-webkit-border-radius:4px;
-            text-decoration:none;text-align:center;}
+a.button{padding:5px;border:2px solid #000;-moz-border-radius:4px;
+        -webkit-border-radius:4px;text-decoration:none;text-align:center;}
 
-
+h2{margin-top:0px;}
 
 
 
