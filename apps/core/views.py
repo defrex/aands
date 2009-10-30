@@ -5,3 +5,4 @@ def home(request):
     return render_to_response('core/home.html', 
             context_instance=RequestContext(request))
 
+

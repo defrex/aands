@@ -14,7 +14,7 @@ body{margin:0;padding:0;font-family:arial;background-color:#0b70c0;
     
     section#main{position:absolute;top:550px;color:#eeeeec;}
         
-        section#body{float:left;width:670px;padding:15px;}
+        section#body{float:left;width:670px;padding:15px;margin-left:120px;}
         aside#sidebar{float:right;width:240px;padding:5px;}
     
     footer{height:150px;width:100%;font-size:12px;border-top:0;padding:10px;}

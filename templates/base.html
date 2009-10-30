@@ -21,7 +21,8 @@
             {% block header %}
             <ul>
                 <li><a href="{% url home %}">Home</a></li>
-                <li><a href="{% url items %}">Registration</a></li>
+                <li><a href="{# url loc #}">Location</a></li>
+                <li><a href="{% url reg %}">Registration</a></li>
             </ul>
             {% endblock %}
         </header>
@@ -29,9 +30,6 @@
             <section id="body">
                 {% block body %}&nbsp;{% endblock %}
             </section>
-            <aside id="sidebar">
-                {% block sidebar %}&nbsp;{% endblock %}
-            </aside>
         </section>
         <div class="clearing"></div>
         <footer>
