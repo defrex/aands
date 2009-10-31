@@ -12,7 +12,7 @@ body{margin:0;padding:0;font-family:arial;background-color:#0b70c0;
                 text-decoration:none;font-size:25px;margin-right:10px;}
         header a:hover {border-bottom:2px solid #fff;}
     
-    section#main{position:absolute;top:430px;color:#111;}
+    section#main{position:absolute;top:275px;color:#111;}
         
         section#body{float:left;width:670px;padding:15px;margin-left:120px;
                 background-image:url(../img/white-op25.png);border:0px dotted #333;
