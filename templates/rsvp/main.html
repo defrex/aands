@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+    <h2>R.S.V.P.</h2>
+    <form method="POST">
+    <ul>
+    {{ form.as_ul }}
+    <li><input type="submit" value="RSVP" /></li>
+    </ul>
+    
+    </form>
+    <script>
+        aands.pretty_select($('#id_meal_options'));
+    </script>
+{% endblock %}
