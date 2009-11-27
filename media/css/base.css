@@ -33,11 +33,14 @@ ul{margin:0;padding:0;}
 li {list-style-type:none;display:inline;}
 label{display:block;font-weight:bold;}
 
+input[type=text] {width:200px;padding:5px;margin:5px;
+        border:1px solid #fff;background-color:#efefef;
+        -moz-border-radius: 4px; -webkit-border-radius: 4px;}
 
-.ui.pretty_select li{width:200px;float:left;padding:5px;margin:5px;
+.ui.pretty_select li{width:200px;padding:5px;margin:5px;
         border:1px solid #fff;background-image:url(../img/white-op25.png);
         -moz-border-radius: 4px; -webkit-border-radius: 4px;
-        pointer:cursor;}
+        cursor:pointer;display:block;}
 .ui.pretty_select li.selected{background-color:#efefef;}
 .ui.pretty_select li p{margin: 5px 0;}
 

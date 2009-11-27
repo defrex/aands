@@ -3,7 +3,7 @@
 
 {% block body %}
     <h2>R.S.V.P.</h2>
-    <form method="POST">
+    <form method="POST" onsubmit="return aands.rsvp.submit();">
     <ul>
     {{ form.as_ul }}
     <li><input type="submit" value="RSVP" /></li>
@@ -12,5 +12,17 @@
     </form>
     <script>
         aands.pretty_select($('#id_meal_options'));
+        aands.rsvp = {};
+        aands.rsvp.submit = function(){
+            if ($('#id_name').val().trim() == ''){
+                $('#id_name').animate({'backgroundColor': '#ff9999'}, 1000, function(){
+                    $('#id_name').animate({'backgroundColor': '#efefef'}, 1000);
+                });
+                return false;
+            }else{
+                return true;
+            }
+        };
     </script>
 {% endblock %}
+
