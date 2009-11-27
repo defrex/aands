@@ -36,7 +36,8 @@ label{display:block;font-weight:bold;}
 
 .ui.pretty_select li{width:200px;float:left;padding:5px;margin:5px;
         border:1px solid #fff;background-image:url(../img/white-op25.png);
-        -moz-border-radius: 4px; -webkit-border-radius: 4px;}
+        -moz-border-radius: 4px; -webkit-border-radius: 4px;
+        pointer:cursor;}
 .ui.pretty_select li.selected{background-color:#efefef;}
 .ui.pretty_select li p{margin: 5px 0;}
 
