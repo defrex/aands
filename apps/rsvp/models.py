@@ -11,6 +11,9 @@ MEAL_CHOICES = (
 class RSVP(models.Model):
     name = models.CharField(max_length=255)
     meal_options = models.CharField(max_length=3, choices=MEAL_CHOICES, default=MEAL_CHOICES[0])
+    
+    def __unicode__(self):
+        return self.name
 
 
 
