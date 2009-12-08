@@ -22,9 +22,9 @@ aands.pretty_select = function(select, change_clbk){
         $(this).addClass('selected');
         $('input[name="'+select_name+'"]').val($(this).attr('op_val'));
         if (typeof(change_clbk) == 'function')
-            change_clbk.apply($('input[name="'+select_name+'"]'));
+            change_clbk($('input[name="'+select_name+'"]'));
     });
-}
+};
 
 
 

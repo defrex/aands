@@ -5,13 +5,29 @@
     <h2>R.S.V.P.</h2>
     <form method="POST" onsubmit="return aands.rsvp.submit();">
     <ul>
-    {{ form.as_ul }}
+        <li>
+            <label for="id_name">Name</label>
+            {{ form.name }}
+        </li>
+        <li>
+            <label for="id_attending">Attending</label>
+            {{ form.attending }}
+        </li>
+        <li id="meal_options">
+            <label for="id_meal_options">Meal Option</label>
+            {{ form.meal_options }}
+        </li>
     <li><input type="submit" value="RSVP" /></li>
     </ul>
     
     </form>
     <script>
         aands.pretty_select($('#id_meal_options'));
+        aands.pretty_select($('#id_attending'), function(select){
+            if (select.val() == 'true') 
+                $('#meal_options').slideDown();
+            else $('#meal_options').slideUp();
+        });
         aands.rsvp = {};
         aands.rsvp.submit = function(){
             if ($('#id_name').val().trim() == ''){

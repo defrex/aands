@@ -44,4 +44,5 @@ input[type=text] {width:200px;padding:5px;margin:5px;
 .ui.pretty_select li.selected{background-color:#efefef;}
 .ui.pretty_select li p{margin: 5px 0;}
 
+#meal_options{}
 
