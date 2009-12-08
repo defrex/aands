@@ -9,8 +9,8 @@ MEAL_CHOICES = (
 )
 
 ATT_CHOICES = (
-    ('true', u'Yes'),
-    ('false', u'No'),
+    (True, u'Yes'),
+    (False, u'No'),
 )
 
 class RSVP(models.Model):
