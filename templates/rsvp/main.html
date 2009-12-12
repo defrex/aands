@@ -3,6 +3,16 @@
 
 {% block body %}
     <h2>R.S.V.P.</h2>
+    
+    {% if thanks %}
+        <p class="thanks">Thank you for RSVPing.</p>
+        <script>
+            setTimeout(function(){
+                $('p.thanks').slideUp();
+            }, 4000);
+        </script>
+    {% endif %}
+    
     <form method="POST" onsubmit="return aands.rsvp.submit();">
     <ul>
         <li>

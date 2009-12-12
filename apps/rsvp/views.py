@@ -6,14 +6,18 @@ from forms import RSVPForm
 
 def main(request):
     if request.method == 'POST':
-        f = RSVPForm(request.POST)
-        if f.is_valid():
-            f.save()
-            return render_to_response('rsvp/thanks.html', 
-                    context_instance=RequestContext(request))
+        fs = RSVPForm(request.POST)
+        if fs.is_valid():
+            fs.save()
+            f = RSVPForm()
+            thanks = True
+        else:
+            f = fs
+            thanks = False
     else:
         f = RSVPForm()
-    return render_to_response('rsvp/main.html', {'form': f},
+        thanks = False
+    return render_to_response('rsvp/main.html', {'form': f, 'thanks': thanks},
             context_instance=RequestContext(request))
 
 
