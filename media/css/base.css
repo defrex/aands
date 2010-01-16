@@ -49,3 +49,6 @@ input[type=text] {width:200px;padding:5px;margin:5px;
 p.thanks{background-color:#fbc300;padding:5px;border: 1px solid #000;
         -moz-border-radius: 4px; -webkit-border-radius: 4px;}
 
+#rsvp_browse{width:100%;}
+#rsvp_browse th{font-weight:bold;text-align:left;}
+

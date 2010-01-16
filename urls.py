@@ -8,6 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     #url(r'^$', 'core.views.home', name='home'),
     (r'^$', include('rsvp.urls')),
+    (r'^rsvp/', include('rsvp.urls')),
     url(r'^registration/$', direct_to_template, {'template': 'core/reg.html'}, name='reg'),
     url(r'^accomodations/$', direct_to_template, {'template': 'core/acom.html'}, name='acom'),
     url(r'^location/$', direct_to_template, {'template': 'core/loc.html'}, name='loc'),

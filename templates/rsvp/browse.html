@@ -1,0 +1,70 @@
+
+{% extends "base.html" %}
+
+
+{% block body %}
+    <h2>Browse RSVPs</h2>
+    
+    <form id="control_form">
+        <label>
+            <input type="checkbox" name="attending" {% spaceless %}
+                    {% ifnotequal request.GET.attending "false" %}
+                        checked="checked"
+                    {% endifnotequal %}
+                {% endspaceless %} />
+            Attending
+        </label>
+        <label>
+            <input type="checkbox" name="not_attending" {% spaceless %}
+                    {% ifnotequal request.GET.not_attending "false" %}
+                        checked="checked"
+                    {% endifnotequal %}
+                {% endspaceless %} />
+            Not Attending
+        </label>
+        <input type="hidden" name="sort" value="{% spaceless %}
+                    {% if request.GET.sort %}
+                        {{ request.GET.sort }}
+                    {% else %}
+                        attending
+                    {% endif %}
+                {% endspaceless %}" />
+    </form>
+    
+    <table id="rsvp_browse">
+        <tr>
+            <th><a href="#" id="name">Name</a></th>
+            <th><a href="#" id="attending">Attending</a></th>
+            <th><a href="#" id="meal_options">Meal Option</a></th>
+        </tr>
+        {% for rsvp in rsvps %}
+        <tr>
+            <td>{{ rsvp.name }}</td>
+            <td>{{ rsvp.attending }}</td>
+            <td>{{ rsvp.meal_options }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <script>
+        var renew = function(){
+            var form = $('#control_form');
+            var get = 'sort='+form.find('[name=sort]').val();
+            get += '&attending=';
+            get += form.find('[name=attending]').attr('checked');
+            get += '&not_attending=';
+            get += form.find('[name=not_attending]').attr('checked');
+            //console.log(get);
+            window.location = '/rsvp/browse/?'+get;
+        };
+        $('input[type=checkbox]').click(renew);
+        $('th a').click(function(e){
+            e.preventDefault();
+            $('input[name=sort]').val($(this).attr('id'));
+            //console.log('setting', $('input[name=sort]'), 'to', $(this).attr('id'));
+            renew();
+            return false;
+        });
+    </script>
+{% endblock %}
+
