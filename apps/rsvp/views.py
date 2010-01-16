@@ -25,13 +25,11 @@ def browse(request):
     rsvps = RSVP.objects.all()
     
     rsvps = rsvps.order_by(request.GET.get('sort', 'attending'))
-    print request.GET
+    
     if request.GET.get('attending') == 'false':
-        print 'filtering for false attending'
         rsvps = rsvps.filter(attending=False)
     
     if request.GET.get('not_attending') == 'false':
-        print 'filtering for false not_attending'
         rsvps = rsvps.filter(attending=True)
     
     return render_to_response('rsvp/browse.html', {'rsvps': rsvps},
