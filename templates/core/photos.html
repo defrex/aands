@@ -1,10 +1,55 @@
 {% extends "base.html" %}
 
+{% block extra_head %}
+	<script type="text/javascript" src="js/jquery.galleriffic.js"></script>
+	<script type="text/javascript" src="js/jquery.history.js"></script>
+	<script type="text/javascript" src="js/jquery.opacityrollover.js"></script>
+	
+	<script>
+	$(function($) {
+	    var gallery = $('#thumbs').galleriffic({
+	        imageContainerSel:         '', // The CSS selector for the element within which the main slideshow image should be rendered
+	        controlsContainerSel:      '', // The CSS selector for the element within which the slideshow controls should be rendered
+	        captionContainerSel:       '', // The CSS selector for the element within which the captions should be rendered
+	        loadingContainerSel:       '', // The CSS selector for the element within which should be shown when an image is loading
+	        renderSSControls:          true, // Specifies whether the slideshow's Play and Pause links should be rendered
+	        renderNavControls:         true, // Specifies whether the slideshow's Next and Previous links should be rendered
+	        playLinkText:              'Play',
+	        pauseLinkText:             'Pause',
+	        prevLinkText:              'Previous',
+	        nextLinkText:              'Next',
+	        nextPageLinkText:          'Next &rsaquo;',
+	        prevPageLinkText:          '&lsaquo; Prev',
+	        enableHistory:             true, // Specifies whether the url's hash and the browser's history cache should update when the current slideshow image changes
+	        onSlideChange:             undefined, // accepts a delegate like such: function(prevIndex, nextIndex) { ... }
+	        onTransitionOut:           undefined, // accepts a delegate like such: function(slide, caption, isSync, callback) { ... }
+	        onTransitionIn:            undefined, // accepts a delegate like such: function(slide, caption, isSync) { ... }
+	        onPageTransitionOut:       undefined, // accepts a delegate like such: function(callback) { ... }
+	        onPageTransitionIn:        undefined, // accepts a delegate like such: function() { ... }
+	        onImageAdded:              undefined, // accepts a delegate like such: function(imageData, $li) { ... }
+	        onImageRemoved:            undefined  // accepts a delegate like such: function(imageData, $li) { ... }
+	    });
+	});
+	</script>
+{% endblock %}
 
 {% block body %}
-    <h2>Photobooth</h2>
-    <p>
-        Check back soon!
-    </p>
+	<h2>Photobooth</h2>
+	<div id="controls"></div>
+	<div id="loading"></div>
+	<div id="slideshow"></div>
+	<div id="caption"></div>
+	<div id="thumbs">
+	    <ul class="thumbs noscript">
+		{% for photo in photos %}
+	        <li>
+	            <img src="{{ MEDIA_URL }}/img/photobooth/{{ photo }}" />
+	            <div class="caption">
+	                (Any html can go here)
+	            </div>
+	        </li>
+	    {% endfor %}
+	    </ul>
+	</div>
 {% endblock %}
 
